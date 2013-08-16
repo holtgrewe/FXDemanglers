@@ -17,8 +17,6 @@ import org.knime.core.data.def.DefaultRow;
 import org.knime.core.data.def.DoubleCell;
 import org.knime.core.data.def.IntCell;
 import org.knime.core.data.def.StringCell;
-import org.knime.core.data.url.MIMEType;
-import org.knime.core.data.url.port.MIMEURIPortObjectSpec;
 import org.knime.core.node.BufferedDataTable;
 import org.knime.core.node.port.PortObjectSpec;
 
@@ -51,8 +49,8 @@ public class FXFQStatsDemangler implements IDemangler {
 	private static int COLUMN_COUNT = 17;
 	
 	@Override
-	public MIMEType getMIMEType() {
-		return new MIMEType("fastq.stats.tsv");
+	public String getMIMEType() {
+		return "fq_stats_tsv";
 	}
 
 	@Override
@@ -84,7 +82,7 @@ public class FXFQStatsDemangler implements IDemangler {
 
 	@Override
 	public PortObjectSpec getPortOjectSpec() {
-		return new MIMEURIPortObjectSpec(getMIMEType());
+		return new DataTableSpec();
 	}
 
 	@Override

@@ -17,8 +17,6 @@ import org.knime.core.data.def.DefaultRow;
 import org.knime.core.data.def.DoubleCell;
 import org.knime.core.data.def.IntCell;
 import org.knime.core.data.def.StringCell;
-import org.knime.core.data.url.MIMEType;
-import org.knime.core.data.url.port.MIMEURIPortObjectSpec;
 import org.knime.core.node.BufferedDataTable;
 import org.knime.core.node.port.PortObjectSpec;
 
@@ -41,8 +39,8 @@ public class FXSamCoverageDemangler implements IDemangler {
 	private static int COLUMN_COUNT = 7;
 	
 	@Override
-	public MIMEType getMIMEType() {
-		return new MIMEType("sam.coverage.tsv");
+	public String getMIMEType() {
+		return "bam_coverage_tsv";
 	}
 
 	@Override
@@ -64,7 +62,7 @@ public class FXSamCoverageDemangler implements IDemangler {
 
 	@Override
 	public PortObjectSpec getPortOjectSpec() {
-		return new MIMEURIPortObjectSpec(getMIMEType());
+		return new DataTableSpec();
 	}
 
 	@Override
