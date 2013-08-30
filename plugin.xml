@@ -9,6 +9,9 @@
       <demangler
             class="de.seqan.knime.demangler.fx.FXSamCoverageDemangler">
       </demangler>
+      <demangler
+            class="de.seqan.knime.demangler.rabema.RabemaReportDemangler">
+      </demangler>
    </extension>
 
 </plugin>
